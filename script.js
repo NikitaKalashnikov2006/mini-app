@@ -155,25 +155,28 @@ function showLesson(lessonId) {
 
 // Функция для отправки приглашения
 function sendInvite() {
+    try {
   const userId = tg.initDataUnsafe.user?.id || '0';
-  const botUsername = 'Business_shop_bot';
-  const appName = 'test';
-  const refLink = `https://t.me/${botUsername}/${appName}?startapp=ref_${userId}`;
-  
-  if (tg.platform !== 'unknown' && tg.sendData) {
-    tg.sendData(JSON.stringify({
-      action: 'invite',
-      link: refLink
-    }));
-  } else {
-    // Альтернатива для веб-версии
-    window.open(`https://t.me/share/url?url=${encodeURIComponent(refLink)}&text=Присоединяйся!`);
-  }
-  
+    const botUsername = 'Business_shop_bot';
+    const appName = 'test';
+    
+    const refLink = `https://t.me/${botUsername}/${appName}?startapp=ref_${userId}`;
+    const shareText = `🚀 Присоединяйся к проекту!`;
+    
+    const shareUrl = `https://t.me/share/url?url=${encodeURIComponent(refLink)}&text=${encodeURIComponent(shareText)}`;
+    
+    console.log('Отправляем ссылку:', shareUrl);
+    
+    tg.openTelegramLink(shareUrl);
+    
+  } catch (error) {
+    console.error('Ошибка:', error);
+    tg.showAlert(`Скопируйте ссылку вручную:\nhttps://t.me/${botUsername}?start=ref_${userId}`);
+  }}
+
   // Закрываем модальное окно
   const modal = document.getElementById('inviteModal');
   if (modal) modal.style.display = 'none';
-}
 
 // Функция для копирования ссылки приглашения
 function copyInviteLink() {
