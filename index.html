@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Telegram WebApp</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://telegram.org/js/telegram-web-app.js?58"></script>
+</head>
+<body>
+  <div id="app">
+    <!-- Весь контент на одной странице -->
+    <div id="content">
+      <!-- Главная страница -->
+      <div id="home-page" class="page active-page">
+        <div class="avatar-container">
+          <img src="pic.png" class="user-avatar" alt="">
+        </div>
+        <div class="userName">@userName</div>
+        <div class="score-container">
+          <img src="pinc.jpg" class="almaz" alt="">
+          <div class="score"><h1>0.00000</h1></div>
+        </div>
+        <div class="news">Тут можно размещать что-то полезное...</div>
+        <button id="exchangeSimulator" class="action-btn">
+          <i class="fab fa-bitcoin"></i> Симулятор биржи
+        </button>
+      </div>
+
+     <!-- Страница друзей -->
+<div id="friends-page" class="page hidden-page">
+  <div class="referral-content">
+    <div class="referral-header">
+      <h2>Приглашай друзей, чтобы зарабатывать монеты!</h2>
+    </div>
+    
+    <div class="referral-stats">
+      <div class="stat-item">
+        <div class="stat-value">0</div>
+        <div class="stat-label">Друзей приглашено</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">0</div>
+        <div class="stat-label">Общий доход</div>
+      </div>
+    </div>
+    
+    <div class="referral-benefits">
+      <div class="benefit-item">
+        <i class="fas fa-solid fa-comments-dollar"></i>
+        Получай 10% от заработка друзей
+      </div>
+    </div>
+    
+    <button id="inviteFriend" class="invite-btn">
+      <i class="fas fa-regular fa-user-plus"></i>
+      Пригласить друга
+    </button>
+    
+    <div class="referrals-list">
+      <h3>Ваши рефералы</h3>
+      <div class="referrals-container" id="referralsContainer">
+        <div class="empty-list">Пока нет приглашённых друзей</div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Модальное окно для приглашения -->
+  <div id="inviteModal" class="modal">
+    <div class="modal-content">
+      <h3>Пригласить друга</h3>
+      <button id="sendInviteBtn" class="modal-btn">
+        <i class="fas fa-paper-plane"></i> Отправить
+      </button>
+      <button id="copyInviteBtn" class="modal-btn">
+        <i class="fas fa-copy"></i> Копировать ссылку
+      </button>
+    </div>
+  </div>
+</div
+
+
+
+      <!-- Страница уроков -->
+      <div id="lessons-page" class="page hidden-page">
+  <div class="lessons-content">
+    <h2 class="lessons-title">Доступные уроки</h2>
+    
+    <div class="lessons-list">
+      <!-- Кнопка Урока 1 -->
+      <button class="lesson-btn" data-lesson="lesson1">
+        <span class="lesson-number">Урок 1</span>
+        <span class="lesson-name">Основы инвестирования</span>
+        <i class="fas fa-chevron-right"></i> <!-- Добавляем иконку -->
+      </button>
+      
+      <!-- Кнопка Урока 2 -->
+      <button class="lesson-btn" data-lesson="lesson2">
+        <span class="lesson-number">Урок 2</span>
+        <span class="lesson-name">Криптовалюты для начинающих</span>
+        <i class="fas fa-chevron-right"></i> <!-- Добавляем иконку -->
+      </button>
+      
+      <!-- Кнопка Урока 3 -->
+      <button class="lesson-btn" data-lesson="lesson3">
+        <span class="lesson-number">Урок 3</span>
+        <span class="lesson-name">Недвижимость как инвестиция</span>
+        <i class="fas fa-chevron-right"></i> <!-- Добавляем иконку -->
+      </button>
+      
+      <!-- Кнопка Урока 4 -->
+      <button class="lesson-btn" data-lesson="lesson4">
+        <span class="lesson-number">Урок 4</span>
+        <span class="lesson-name">Создание бизнеса</span>
+        <i class="fas fa-chevron-right"></i> <!-- Добавляем иконку -->
+      </button> 
+      
+      <!-- Кнопка Урока 4 -->
+      <button class="lesson-btn" data-lesson="lesson4">
+        <span class="lesson-number">Урок 4</span>
+        <span class="lesson-name">Создание бизнеса</span>
+        <i class="fas fa-chevron-right"></i> <!-- Добавляем иконку -->
+      </button>
+    </div>
+  </div>
+</div>
+
+      <!-- Страница заданий -->
+      <div id="tasks-page" class="page hidden-page">
+        <!-- Содержимое tasks.html -->
+      </div>
+
+      <!-- Страница кошелька -->
+      <div id="wallet-page" class="page hidden-page">
+        <!-- Контейнер для TON Connect -->
+        <div id="ton-connect-container">
+          <div id="ton-connect"></div>
+        </div>
+        
+        <!-- Форма для отправки TON -->
+        <div class="input-group">
+          <label for="amount">Amount (TON):</label>
+          <input type="text" id="amount" value="1" placeholder="Enter amount in TON" inputMode="decimal">
+          <div id="amount-error">Пожалуйста, введите корректное число</div>
+        </div>
+        
+        <button id="send-btn" disabled>Send Transaction</button>
+      </div>
+    </div>
+  </div>
+
+  <footer id="footer">
+    <nav>
+      <button class="nav-btn active" data-page="home">
+        <i class="fas fa-home"></i>
+        <span>Главная</span>
+      </button>
+      <button class="nav-btn" data-page="friends">
+        <i class="fas fa-user-friends"></i>
+        <span>Друзья</span>
+      </button>
+      <button class="nav-btn" data-page="lessons">
+        <i class="fas fa-book"></i>
+        <span>Уроки</span>
+      </button>
+      <button class="nav-btn" data-page="tasks">
+        <i class="fas fa-tasks"></i>
+        <span>Задания</span>
+      </button>
+      <button class="nav-btn" data-page="wallet">
+        <i class="fas fa-wallet"></i>
+        <span>Кошелёк</span>
+      </button>
+    </nav>
+  </footer>
+
+  <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
