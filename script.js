@@ -158,7 +158,7 @@ function sendInvite() {
     try {
   const userId = tg.initDataUnsafe.user?.id || '0';
     const botUsername = 'Business_shop_bot';
-    const appName = 'test';
+    const appName = 'wing';
     
     const refLink = `https://t.me/${botUsername}/${appName}?startapp=ref_${userId}`;
     const shareText = `🚀 Присоединяйся к проекту!`;
@@ -182,7 +182,7 @@ function sendInvite() {
 function copyInviteLink() {
   const userId = tg.initDataUnsafe.user?.id || '0';
   const botUsername = 'Business_shop_bot';
-  const appName = 'test';
+  const appName = 'wing';
   const refLink = `https://t.me/${botUsername}/${appName}?startapp=ref_${userId}`;
   
   navigator.clipboard.writeText(refLink).then(() => {
@@ -294,7 +294,7 @@ function initTonConnect() {
       manifestUrl: 'https://nikitakalashnikov2006.github.io/shop/manifest-tonconnect.json',
       buttonRootId: 'ton-connect',
       uiOptions: {
-        twaReturnUrl: 'https://t.me/Business_shop_bot/App'
+        twaReturnUrl: 'https://t.me/Business_shop_bot/wing'
       }
     });
 
