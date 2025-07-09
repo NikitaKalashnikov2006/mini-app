@@ -514,6 +514,7 @@ nav {
 
 /* Обновленные стили для страницы кошелька */
 #wallet-page {
+  margin-top: 12%;
    padding: 20px;
   width: 100%;
   box-sizing: border-box;
