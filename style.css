@@ -6,6 +6,10 @@ body {
   min-height: 100vh;
   background-color: black;
   color: white;
+   overflow-x: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
 }
 
 #content {
@@ -87,7 +91,7 @@ nav {
 /* Стили для главной страницы */
 .page {
   font-family: Arial, sans-serif;
-  max-width: 600px;
+  
   margin-top: 20px;
   margin-right: auto;
   margin-left: auto;
@@ -506,18 +510,17 @@ nav {
 }
 
 .active-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  display:block;
+  
 }
 
 /* Обновленные стили для страницы кошелька */
 #wallet-page {
-  margin-top: 16%;
+  margin-top: 18%;
    padding: 20px;
   width: 100%;
   box-sizing: border-box;
+  position: fixed;
 }
 
 
