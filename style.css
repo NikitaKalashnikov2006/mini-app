@@ -1,15 +1,17 @@
 /* Основные стили */
 body {
+  font-family: Arial, sans-serif;
+  max-width: 600px;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: auto;
+  background-color: black;
+  color: white;
   /*padding-top: var(--ts-safe-area-inset-top);
     padding-bottom: var(--ts-safe-area-inset-bottom);*/
     padding-top: var(--tg-content-safe-area-inset-top);
     padding-bottom: var(--tg-content-safe-area-inset-bottom);
-  font-family: Arial, sans-serif;
-  /*display: flex;*/
-  flex-direction: column;
-  min-height: 100vh;
-  background-color: black;
-  color: white;
 }
 
 #content {
