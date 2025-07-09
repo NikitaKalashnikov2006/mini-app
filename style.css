@@ -514,9 +514,18 @@ nav {
 
 /* Обновленные стили для страницы кошелька */
 #wallet-page {
-  margin-top: 12%;
-   padding: 20px;
-  width: 100%;
+   font-family: Arial, sans-serif;
+  max-width: 600px;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: auto;
+  background-color: black;
+  color: white;
+  /*padding-top: var(--ts-safe-area-inset-top);
+    padding-bottom: var(--ts-safe-area-inset-bottom);*/
+    padding-top: var(--tg-content-safe-area-inset-top);
+    padding-bottom: var(--tg-content-safe-area-inset-bottom);
   box-sizing: border-box;
 }
 
