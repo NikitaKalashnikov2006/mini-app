@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const subscribeBtn = document.querySelector('.task-action-btn');
   if (subscribeBtn) {
     subscribeBtn.addEventListener('click', () => {
-      const channelUsername = 'why_wing'; // Замените на username вашего канала
+      const channelUsername = 'whitebirdio'; // Замените на username вашего канала
       const channelUrl = `https://t.me/${channelUsername}`;
       
       try {
