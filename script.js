@@ -77,6 +77,23 @@ document.addEventListener("DOMContentLoaded", () => {
   // Показываем начальную страницу из hash или home
   const hash = window.location.hash.substring(1) || 'home';
   showPage(hash);
+
+  // Обработчик для кнопки "Подписаться" в заданиях
+  const subscribeBtn = document.querySelector('.task-action-btn');
+  if (subscribeBtn) {
+    subscribeBtn.addEventListener('click', () => {
+      const channelUsername = 'why_wing'; // Замените на username вашего канала
+      const channelUrl = `https://t.me/${channelUsername}`;
+      
+      try {
+        tg.openTelegramLink(channelUrl);
+      } catch (error) {
+        console.error('Ошибка при открытии канала:', error);
+        // Fallback для случаев, когда openTelegramLink не работает
+        window.open(channelUrl, '_blank');
+      }
+    });
+  }
 });
 
 // Функция для установки данных пользователя
