@@ -158,26 +158,112 @@ function showPage(page) {
 }
 
 // Функция для отображения урока
+// Обновите функцию showLesson
 function showLesson(lessonId) {
-  // В реальном приложении здесь можно загружать контент урока
-  // Сейчас просто покажем alert для демонстрации
-  alert(`Открываем урок: ${lessonId}`);
+  // Скрываем список уроков
+  document.querySelector('.lessons-list').classList.add('hidden-page');
   
-  // Пример реализации с контентом уроков:
-  /*
+  // Показываем контейнер с контентом урока
+  const lessonContent = document.getElementById('lesson-content-container');
+  lessonContent.classList.remove('hidden-page');
+  
+  // Загружаем контент урока
+  loadLessonContent(lessonId);
+}
+
+// Новая функция для загрузки контента урока
+function loadLessonContent(lessonId) {
   const lessonContent = {
     lesson1: {
       title: "Основы инвестирования",
-      text: "Контент урока 1..."
+      text: `
+        <p>Инвестирование - это процесс вложения денежных средств с целью получения дохода или прибыли.</p>
+        <h3>Основные принципы:</h3>
+        <ul>
+          <li>Диверсификация - не кладите все яйца в одну корзину</li>
+          <li>Долгосрочная перспектива - инвестиции требуют времени</li>
+          <li>Риск и доходность взаимосвязаны</li>
+        </ul>
+        <p>Примеры инвестиционных инструментов: акции, облигации, недвижимость.</p>
+      `
     },
-    // другие уроки
+    lesson2: {
+      title: "Криптовалюты для начинающих",
+      text: `
+        <p>Криптовалюты - это цифровые или виртуальные валюты, использующие криптографию для безопасности.</p>
+        <h3>Основные понятия:</h3>
+        <ul>
+          <li>Блокчейн - технология, лежащая в основе</li>
+          <li>Майнинг - процесс создания новых блоков</li>
+          <li>Кошельки - для хранения криптовалют</li>
+        </ul>
+        <p>Популярные криптовалюты: Bitcoin, Ethereum, TON.</p>
+      `
+    },
+    lesson3: {
+      title: "Недвижимость как инвестиция",
+      text: `
+        <p>Инвестиции в недвижимость могут приносить два вида дохода:</p>
+        <ol>
+          <li>Арендные платежи</li>
+          <li>Рост стоимости объекта</li>
+        </ol>
+        <h3>Виды недвижимости:</h3>
+        <ul>
+          <li>Жилая (квартиры, дома)</li>
+          <li>Коммерческая (офисы, магазины)</li>
+          <li>Земельные участки</li>
+        </ul>
+      `
+    },
+    lesson4: {
+      title: "Создание бизнеса",
+      text: `
+        <p>Создание собственного бизнеса - один из способов достижения финансовой независимости.</p>
+        <h3>Этапы создания бизнеса:</h3>
+        <ol>
+          <li>Идея и анализ рынка</li>
+          <li>Бизнес-план</li>
+          <li>Регистрация</li>
+          <li>Запуск и продвижение</li>
+        </ol>
+        <p>Важно начинать с малого и масштабироваться постепенно.</p>
+      `
+    },
+    lesson5: {
+      title: "Пупупу",
+      text: `
+        <p>Создание собственного бизнеса - один из способов достижения финансовой независимости.</p>
+        <h3>Этапы создания бизнеса:</h3>
+        <ol>
+          <li>Идея и анализ рынка</li>
+          <li>Бизнес-план</li>
+          <li>Регистрация</li>
+          <li>Запуск и продвижение</li>
+        </ol>
+        <p>Важно начинать с малого и масштабироваться постепенно.</p>
+      `
+    }
   };
-  
-  if (lessonContent[lessonId]) {
-    // Показываем контент урока
-  }
-  */
+
+  // Устанавливаем заголовок и текст урока
+  document.getElementById('lesson-title').textContent = lessonContent[lessonId].title;
+  document.getElementById('lesson-text').innerHTML = lessonContent[lessonId].text;
 }
+
+// Добавьте обработчик для кнопки "Назад" в DOMContentLoaded
+document.addEventListener("DOMContentLoaded", () => {
+  // ... существующий код ...
+
+  // Обработчик для кнопки "Назад" в уроках
+  const backToLessonsBtn = document.getElementById('back-to-lessons');
+  if (backToLessonsBtn) {
+    backToLessonsBtn.addEventListener('click', () => {
+      document.querySelector('.lessons-list').classList.remove('hidden-page');
+      document.getElementById('lesson-content-container').classList.add('hidden-page');
+    });
+  }
+});
 
 // Функция для отправки приглашения
 function sendInvite() {
