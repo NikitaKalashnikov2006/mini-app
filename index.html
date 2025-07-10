@@ -117,24 +117,31 @@
       </button> 
       
       <!-- Кнопка Урока 4 -->
-      <button class="lesson-btn" data-lesson="lesson4">
-        <span class="lesson-number">Урок 4</span>
+      <button class="lesson-btn" data-lesson="lesson5">
+        <span class="lesson-number">Урок 5</span>
         <span class="lesson-name">Создание бизнеса</span>
         <i class="fas fa-chevron-right"></i> <!-- Добавляем иконку -->
       </button>
     </div>
   </div>
+  <div id="lesson-content-container" class="lesson-content hidden-page">
+  <button class="back-btn" id="back-to-lessons">
+    <i class="fas fa-arrow-left"></i> Назад к урокам
+  </button>
+  <h2 id="lesson-title"></h2>
+  <div id="lesson-text" class="lesson-text"></div>
+</div>
 </div>
 
       <!-- Страница заданий -->
 <div id="tasks-page" class="page hidden-page">
   <div class="tasks-content">
-    <h2 class="tasks-title">Доступные задания</h2>
+    <h2 class="tasks-title">Полезные инструменты:</h2>
     
     <div class="tasks-list">
       <!-- Кнопка задания -->
-  <div class="task-item">
-  <i class="fas fa-paper-plane"></i>
+     <div class="task-item">
+      <i class="fas fa-paper-plane"></i>
   <span class="task-name">Подписаться на Telegram Wing</span>
   <button class="task-action-btn">Подписаться</button>
 </div>
@@ -151,12 +158,12 @@
         
         <!-- Форма для отправки TON -->
         <div class="input-group">
-          <label for="amount">Amount (TON):</label>
+          <label for="amount">Хотите стать частью команды? Донаты - это отличный способ поддержать Wing и внести свой вклад в его развитие. Подключайте свой кошелёк, вводите кол-во и вносите TON! (за отправку берётся комиссия 0.1 TON)</label>
           <input type="text" id="amount" value="1" placeholder="Enter amount in TON" inputMode="decimal">
           <div id="amount-error">Пожалуйста, введите корректное число</div>
         </div>
         
-        <button id="send-btn" disabled>Send Transaction</button>
+        <button id="send-btn" disabled>Отправить</button>
       </div>
     </div>
   </div>
@@ -177,7 +184,7 @@
       </button>
       <button class="nav-btn" data-page="tasks">
         <i class="fas fa-tasks"></i>
-        <span>Задания</span>
+        <span>Ресурсы</span>
       </button>
       <button class="nav-btn" data-page="wallet">
         <i class="fas fa-wallet"></i>
