@@ -637,3 +637,46 @@ nav {
     opacity: 1;
     transition: opacity 0.5s;
 }
+
+/* Обновлённые стили для страницы заданий */
+.task-item {
+  background: rgb(103, 181, 35);
+  border-radius: 10px;
+  padding: 16px;
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  margin: 12px;
+}
+
+.task-name {
+  font-size: 16px;
+  flex-grow: 1;
+}
+
+.task-action-btn {
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 15px;
+  font-size: 14px;
+  font-weight: normal;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-left: 10px;
+}
+
+.task-action-btn:hover {
+  background: #333;
+  transform: translateY(-1px);
+}
+
+.task-action-btn:active {
+  transform: translateY(1px);
+  background: #222;
+}
